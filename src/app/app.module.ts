@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app.material.module/app.material.module.module';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
+import { StoreModule } from "@ngrx/store";
+import { metaReducer } from "./common/index";
 
 @NgModule({
 	declarations: [
@@ -16,7 +18,8 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
-		AppMaterialModule
+		AppMaterialModule,
+		StoreModule.forRoot({ reducer: metaReducer })
 	],
 	providers: [
 		{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
