@@ -2,7 +2,11 @@
 	<li>
 		<button mat-raised-button (click)="openDialog()">Type your favorite animal's name</button>
 	</li>
+	<li *ngIf="modalName">
+		You modal name is: <i>{{modalName}}</i>
+	</li>
+	
 	<li *ngIf="animal">
-		You favorite animal is: <i>{{animal}}</i>
+		Your favorite animal is: <i>{{animal}}</i>
 	</li>
 </ol>
